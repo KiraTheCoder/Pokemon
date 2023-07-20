@@ -1,0 +1,101 @@
+/* Google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&family=Oswald:wght@400;600;700&family=PT+Sans:wght@400;700&family=Roboto:wght@400;700;900&display=swap');
+
+/* font-family: 'Montserrat', sans-serif;
+    font-family: 'Oswald', sans-serif;
+    font-family: 'PT Sans', sans-serif;
+    font-family: 'Roboto', sans-serif; */
+
+/* Header */
+.navbar-brand img {
+    margin-right: 0.5rem;
+    height: 1.8rem;
+}
+
+.navbar-brand {
+    color: #000;
+    font-size: clapm(1.2rem, 2.5vw 3rem);
+    font-weight: 900;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.navbar-nav img {
+    height: 2.4rem;
+}
+
+@media (max-width:500px) {
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+}
+
+
+
+
+/* SeachSection */
+.inputGroup {
+    width: 100%;
+    position: relative;
+}
+
+.callToSerach {
+    font-size: clamp(1.2rem, 2.5vw, 2rem);
+    color: #000;
+    font-family: 'Oswald', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.searchInput {
+    width: 75%;
+    height: 1.9375rem;
+    flex-shrink: 0;
+    border-radius: 0.8125rem;
+    background: #FFEFEF;
+    color: rgba(0, 0, 0, 0.61);
+    font-family: Orelega One;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.searchBtn {
+    width: 2.625rem;
+    height: 1.9375rem;
+    border-radius: 10.3125rem;
+    background: linear-gradient(180deg, #C2F0F3 0%, rgba(217, 217, 217, 0.00) 100%);
+    position: absolute;
+    top: 0%;
+    right: 12%;
+}
+
+.searchIcon {
+    width: 1.3125rem;
+    height: 1.3125rem;
+}
+
+.searchIcon:hover {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+/* Footer */
+
+.social-icon {
+    width: 1.5625rem;
+    height: 1.5625rem;
+    margin: 0 0.5rem;
+}
+
+.social-icon-yt {
+    width: 1.9375rem;
+    height: 1.9375rem;
+}
+
+.copywriteText {
+    font-size: clamp(0.6rem, 2.5vw, 1.3rem);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}

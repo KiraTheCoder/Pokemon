@@ -1,0 +1,16 @@
+body {
+    overflow-x: hidden;
+    margin-top: 4.5rem;
+}
+
+/* Aos custom rotate */
+[data-aos="rotate"] {
+    transform: rotate(360deg);
+    opacity: 1;
+    transition-property: transform, opacity;
+
+    &.aos-animate {
+        transform: rotate(0);
+        opacity: 1;
+    }
+}

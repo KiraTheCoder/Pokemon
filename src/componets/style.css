@@ -1,10 +1,20 @@
 /* Google fonts */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&family=Oswald:wght@400;600;700&family=PT+Sans:wght@400;700&family=Roboto:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&family=Oswald:wght@400;600;700&family=PT+Sans:wght@400;700&family=Poppins:wght@400;500;700;900&family=Roboto+Flex:wght@400;500;700;900&family=Roboto:wght@400;700;900&display=swap');
+@import url('https://db.onlinewebfonts.com/c/d2d21cf0ee4c1d969d8a4dccc587ab26?family=Flexo-Medium');
+/* 
+font-family: 'Montserrat', sans-serif;
+font-family: 'Oswald', sans-serif;
+font-family: 'Poppins', sans-serif;
+font-family: 'PT Sans', sans-serif;
+font-family: 'Roboto', sans-serif;
+font-family: 'Roboto Flex', sans-serif;
+ */
 
-/* font-family: 'Montserrat', sans-serif;
-    font-family: 'Oswald', sans-serif;
-    font-family: 'PT Sans', sans-serif;
-    font-family: 'Roboto', sans-serif; */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
 
 /* Header */
 .navbar-brand img {
@@ -31,6 +41,12 @@
 
 
 
+
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
 
 /* SeachSection */
 .inputGroup {
@@ -81,6 +97,12 @@
     height: 1.5rem;
 }
 
+
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
 /* Footer */
 
 .social-icon {
@@ -98,4 +120,138 @@
     font-size: clamp(0.6rem, 2.5vw, 1.3rem);
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
+}
+
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/* card */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+
+.awesomeCardConatiner {
+    width: 100%;
+    width: 100%;
+    margin-top: 3rem;
+    position: relative;
+}
+
+.awesomeCardBg {
+    width: 95%;
+    width: 95%;
+}
+
+.awesomeCardPokemon {
+    width: 95%;
+    height: 95%;
+    position: absolute;
+    left: -27%;
+    bottom: 10%;
+}
+
+.awesomeCardText {
+    width: 60%;
+    height: 60%;
+    position: absolute;
+    top: 0;
+    right: 3%;
+    fill: linear-gradient(180deg, #DDE8D6 0%, rgba(255, 229, 229, 0.00) 100%);
+}
+
+.awesomeCardText h4 {
+    color: #000;
+    text-shadow: 0px 8px 8px 0px rgba(153, 162, 160, 0.066);
+    font-family: "Flexo-Medium", arial, sans-serif;
+    font-size: 100%;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 2rem;
+    letter-spacing: 0.0375rem;
+}
+
+
+.awesomeCardText h5 {
+    color: #000;
+    font-family: 'Roboto Flex', sans-serif;
+    font-size: 68%;
+    font-weight: 600;
+    letter-spacing: 0.025rem;
+}
+
+@media(min-width:375px) {
+
+    .awesomeCardPokemon {
+        left: -20%;
+    }
+
+
+    .awesomeCardText {
+        right: -7%;
+    }
+
+}
+
+@media (min-width:768px) {
+
+    .awesomeCardConatiner {
+        width: 140%;
+        width: 135%;
+        margin-left: -15%;
+    }
+
+    .awesomeCardText h4 {
+        text-shadow: 0px 8px 8px 0px rgba(153, 162, 160, 0.066);
+        font-size: 85%;
+        line-height: 1.4rem;
+    }
+
+
+    .awesomeCardText h5 {
+        font-size: 62%;
+    }
+
+    .awesomeCardText {
+        top: 5%;
+        right: -3.8%;
+    }
+
+    .awesomeCardPokemon {
+        left: -22%;
+    }
+
+}
+
+
+
+@media (min-width:1024px) {
+
+    .awesomeCardPokemon {
+        left: -24%;
+    }
+
+    .awesomeCardText {
+        top: 15%;
+        right: -0.6%;
+    }
+
+
+    .awesomeCardText h4 {
+        color: #000;
+        font-size: 125%;
+    }
+
+    .awesomeCardText h5 {
+        font-size: 80%;
+    }
+
 }

@@ -1,13 +1,15 @@
-const card = ({ pokemonList }) => {
-    console.log(pokemonList);
-    const pokemonSortedList = pokemonList.sort((a, b) => (a.id > b.id ? 1 : -1))
+import { useState } from "react"
+import Modal from "./Modal"
+const card = ({ pokemonList, pokemonName, setPokemonName }) => {
+    pokemonList.sort((a, b) => (a.id - b.id))
     return (
         <div className="container">
+            <Modal pokemonName={pokemonName} />
             <div className="row  justify-content-center align-items-center">
 
-                {pokemonSortedList.map((pokemon, index) => (
+                {pokemonList.map((pokemon, index) => (
                     <div key={index} className="col-12 col-md-4 col-xl-3">
-                        <div className="awesomeCardConatiner ">
+                        <div onClick={() => { setPokemonName(pokemon.name) }} type="button" data-bs-toggle="modal" data-bs-target="#pokemonModal" className="awesomeCardConatiner ">
                             <img className="awesomeCardPokemon" src={`https://unpkg.com/pokeapi-sprites@2.0.2/sprites/pokemon/other/dream-world/${pokemon.id}.svg`} alt="Pokemon" />
                             <div className="awesomeCardText">
                                 <h4>{pokemon.name}</h4>

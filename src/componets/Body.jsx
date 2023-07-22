@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import SearchSection from "./SearchSection";
 import Card from "./Card";
+
 const Body = () => {
     const [loading, setLoading] = useState(false);
     const [pokemonList, setPokemonList] = useState([]);
@@ -10,8 +11,13 @@ const Body = () => {
     );
     const [prevPage, setPrevPage] = useState();
     const [nextPage, setNextPage] = useState();
+    const [pokemonName, setPokemonName] = useState(null);
 
-    const loadpokemon = async () => {
+
+
+
+    useEffect(() => {
+        setLoading(true);
         axios
             .get(currentPage)
             .then((res) => {
@@ -29,17 +35,14 @@ const Body = () => {
                             console.log(err);
                         });
                 });
+
+                console.log(pokemonList);
                 setPrevPage(res.data.previous);
                 setNextPage(res.data.next);
             })
             .catch((err) => {
                 console.log(err);
             });
-    }
-
-    useEffect(() => {
-        setLoading(true);
-        loadpokemon();
         setLoading(false);
     }, [currentPage]);
 
@@ -53,8 +56,8 @@ const Body = () => {
 
     return (
         <>
-            <SearchSection />
-            {loading ? <h1>Loading...</h1> : <Card pokemonList={pokemonList} />};
+            <SearchSection pokemonName={pokemonName} setPokemonName={setPokemonName} />
+            {loading ? <h1>Loading...</h1> : <Card pokemonList={pokemonList} pokemonName={pokemonName} setPokemonName={setPokemonName} />};
             <div className="container">
                 <div className="row  text-center">
                     <div className="col-6">

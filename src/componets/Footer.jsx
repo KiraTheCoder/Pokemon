@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer = () => {
     return (
-        <div className="container fixed-bottom  text-center">
+        <div className="container  text-center">
             <div className="row">
                 <div className="col-12">
                     <div className="SoialMediaIconConatiner  ">

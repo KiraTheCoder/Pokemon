@@ -1,18 +1,18 @@
-// import React from 'react'
-
-const card = () => {
+const card = ({ pokemonList }) => {
+    console.log(pokemonList);
+    const pokemonSortedList = pokemonList.sort((a, b) => (a.id > b.id ? 1 : -1))
     return (
         <div className="container">
             <div className="row  justify-content-center align-items-center">
 
-                {[1, 2, 3, 4, 5, 6].map((val, index) => (
+                {pokemonSortedList.map((pokemon, index) => (
                     <div key={index} className="col-12 col-md-4 col-xl-3">
                         <div className="awesomeCardConatiner ">
-                            <img className="awesomeCardPokemon" src={`/assets/${val}.svg`} alt="Pokemon image" />
+                            <img className="awesomeCardPokemon" src={`https://unpkg.com/pokeapi-sprites@2.0.2/sprites/pokemon/other/dream-world/${pokemon.id}.svg`} alt="Pokemon" />
                             <div className="awesomeCardText">
-                                <h4>Pikachu Pokemon</h4>
-                                <h5>Abilities ShedSkin</h5>
-                                <h5>Type Bug</h5>
+                                <h4>{pokemon.name}</h4>
+                                <h5>Ability {pokemon.abilities[0].ability.name}</h5>
+                                <h5>Type {pokemon.types[0].type.name}</h5>
                             </div>
                             <img className="awesomeCardBg" src="/assets/CardSurface.png" alt="" />
                         </div>
@@ -22,5 +22,4 @@ const card = () => {
         </div>
     )
 }
-
 export default card

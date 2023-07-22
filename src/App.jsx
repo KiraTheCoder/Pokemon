@@ -1,14 +1,12 @@
 import Header from "./componets/Header"
-import SearchSection from "./componets/SearchSection"
 import Footer from "./componets/Footer"
-import Card from "./componets/Card"
+import Body from "./componets/Body"
 function App() {
 
   return (
     <>
       <Header />
-      <SearchSection />
-      <Card />
+      <Body />
       <Footer />
     </>
   )

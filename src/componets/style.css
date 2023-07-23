@@ -255,3 +255,19 @@ font-family: 'Roboto Flex', sans-serif;
     }
 
 }
+
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/* Modal */
+.Pokédex {
+    margin-top: -60%;
+}
+
+.modalImage {
+    width: 20rem;
+    height: 20rem;
+}

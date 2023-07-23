@@ -1,5 +1,5 @@
-import { useState } from "react"
 import Modal from "./Modal"
+import typeColours from "./TypeColours"
 const card = ({ pokemonList, pokemonName, setPokemonName }) => {
     pokemonList.sort((a, b) => (a.id - b.id))
     return (
@@ -14,7 +14,10 @@ const card = ({ pokemonList, pokemonName, setPokemonName }) => {
                             <div className="awesomeCardText">
                                 <h4>{pokemon.name}</h4>
                                 <h5>Ability {pokemon.abilities[0].ability.name}</h5>
-                                <h5>Type {pokemon.types[0].type.name}</h5>
+                                <h5 > Type {pokemon.types[0].type.name}</h5>
+
+                                {/* style={{ backgroundColor: typeColours.pokemon.types[0].type.name, width: "25%" }} */}
+
                             </div>
                             <img className="awesomeCardBg" src="/assets/CardSurface.png" alt="" />
                         </div>

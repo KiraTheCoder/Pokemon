@@ -36,7 +36,7 @@ const Body = () => {
                         });
                 });
 
-                console.log(pokemonList);
+                // console.log(pokemonList);
                 setPrevPage(res.data.previous);
                 setNextPage(res.data.next);
             })
@@ -56,8 +56,18 @@ const Body = () => {
 
     return (
         <>
+            {/* {loading &&
+                < div className="modal fade" id="pokemonModal" tabindex="-1" aria-labelledby="PokemonModalLabel" aria-hidden="true" >
+                    <div className="modal-dialog modal-dialog-centered">
+                        <div className="modal-body">
+                            <h1>Loading</h1>
+                        </div>
+                    </div>
+                </div >
+            } */}
+
             <SearchSection pokemonName={pokemonName} setPokemonName={setPokemonName} />
-            {loading ? <h1>Loading...</h1> : <Card pokemonList={pokemonList} pokemonName={pokemonName} setPokemonName={setPokemonName} />};
+            <Card pokemonList={pokemonList} pokemonName={pokemonName} setPokemonName={setPokemonName} />;
             <div className="container">
                 <div className="row  text-center">
                     <div className="col-6">

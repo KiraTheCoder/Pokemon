@@ -29,77 +29,64 @@ const Modal = ({ pokemonName }) => {
 
                     <div className="modal-body p-0 ">
                         <div class=" container-fluid d-flex justify-content-center ">
-                            {/* 
-
-
-                                {pokemonFound
-                                    ?
-                                    :
-
-                                    <h4>Pokémon Not Found</h4>
-                                }
-
-                            */}
 
 
 
+                            {pokemonFound
+                                ?
+                                <div class="Pokédex">
+                                    <div class="item item1">
+                                        <img class="modalImage"
+                                            src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${pokemonData.id}.svg`}
+                                            alt="Pokemon" />
+                                    </div>
+                                    <div class="item item2">
+                                        <h1>bulbasaur</h1>
 
-                            <div class="Pokédex">
+                                    </div>
+                                    <div class="item item3">
+                                        <h2>#1</h2>
 
-                                <div class="item item1">
-                                    <img class="modalImage"
-                                        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/3.svg"
-                                        alt="Pokemon" />
+                                    </div>
+                                    <div class="item item4">
+                                        <h2>ABILITY</h2>
+
+                                    </div>
+                                    <div class="item item5">
+                                        <h3>overgrow</h3>
+                                        <h3>chlorophyll</h3>
+                                    </div>
+                                    <div class="item item6">
+                                        <h2>TYPE</h2>
+                                    </div>
+                                    <div class="item item7">
+                                        <h3>grass</h3>
+                                        <h3>poison</h3>
+                                    </div>
+                                    <div class="item item8">
+                                        <h2>WEIGHT</h2>
+                                        <h2>HEIGHT</h2>
+                                    </div>
+                                    <div class="item item9">
+                                        <h3>6.9kg</h3>
+                                        <h3>0.7m</h3>
+                                    </div>
+                                    <div class="item item10">
+                                        <h2>STATS</h2>
+                                    </div>
+                                    <div class="item11">
+                                        <p>HP : 45</p>
+                                        <p>ATTACK : 49</p>
+                                        <p>DEFENSE :49</p>
+                                        <p>SPECIAL-ATTACK : 65</p>
+                                        <p>SPECIAL-DEFENSE : 65</p>
+                                        <p>SPEED : 45</p>
+                                    </div>
                                 </div>
-                                <div class="item item2">
-                                    <h1>bulbasaur</h1>
+                                :
 
-                                </div>
-                                <div class="item item3">
-                                    <h2>#1</h2>
-
-                                </div>
-                                <div class="item item4">
-                                    <h2>ABILITY</h2>
-
-                                </div>
-                                <div class="item item5">
-                                    <h3>overgrow</h3>
-                                    <h3>chlorophyll</h3>
-                                </div>
-                                <div class="item item6">
-                                    <h2>TYPE</h2>
-                                </div>
-                                <div class="item item7">
-                                    <h3>grass</h3>
-                                    <h3>poison</h3>
-                                </div>
-                                <div class="item item8">
-                                    <h2>WEIGHT</h2>
-                                    <h2>HEIGHT</h2>
-                                </div>
-                                <div class="item item9">
-                                    <h3>6.9kg</h3>
-                                    <h3>0.7m</h3>
-                                </div>
-                                <div class="item item10">
-                                    <h2>STATS</h2>
-                                </div>
-                                <div class="item11">
-                                    <p>HP : 45</p>
-                                    <p>ATTACK : 49</p>
-                                    <p>DEFENSE :49</p>
-                                </div>
-                                <div class="item12">
-                                    <p>SPECIAL-ATTACK : 65</p>
-                                    <p>SPECIAL-DEFENSE : 65</p>
-                                    <p>SPEED : 45</p>
-                                </div>
-                            </div>
-
-
-
-
+                                <h4>Pokémon Not Found</h4>
+                            }
                         </div>
 
 
@@ -114,3 +101,69 @@ const Modal = ({ pokemonName }) => {
 export default Modal
 
 
+
+
+
+
+    //   api fetched and show these data
+    // < div class="Pokédex" >
+    //                                 <div class="item item1">
+    //                                     <img class="modalImage"
+    //                                         src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${pokemonData.id}.svg`}
+    //                                         alt="Pokemon" />
+    //                                 </div>
+    //                                 <div class="item item2">
+    //                                     <h1>{pokemonData.name}</h1>
+
+    //                                 </div>
+    //                                 <div class="item item3">
+    //                                     <h2>{"#" + pokemonData.id}</h2>
+
+    //                                 </div>
+    //                                 <div class="item item4">
+    //                                     <h2>ABILITY</h2>
+
+    //                                 </div>
+    //                                 <div class="item item5">
+    //                                     {
+    //                                         pokemonData.abilities.map((val) => (
+    //                                             <h3>{val.ability.name}</h3>
+    //                                             // console.log(val.ability.name)
+    //                                         )
+    //                                         )}
+    //                                 </div>
+    //                                 <div class="item item6">
+    //                                     <h2>TYPE</h2>
+    //                                 </div>
+    //                                 <div class="item item7">
+    //                                     {
+    //                                         pokemonData.types.map((val) => (
+    //                                             <h3>{val.type.name}</h3>
+    //                                             //   console.log(val.type.name)
+    //                                         )
+    //                                         )
+    //                                     }
+    //                                 </div>
+    //                                 <div class="item item8">
+    //                                     <h2>WEIGHT</h2>
+    //                                     <h2>HEIGHT</h2>
+
+    //                                 </div>
+    //                                 <div class="item item9">
+    //                                     <h3> {pokemonData.weight / 10 + "kg"}</h3>
+    //                                     <h3>{pokemonData.height / 10 + "m"}</h3>
+
+    //                                 </div>
+    //                                 <div class="item item10">
+    //                                     <h2>STATS</h2>
+    //                                 </div>
+    //                                 <div class="item11">
+    //                                     {pokemonData.stats.map((val) => (
+
+    //                                         // console.log(val.stat.name.toUpperCase() + " -> " + val.base_stat)
+    //                                         < p >{val.stat.name + " " + val.base_stat}</p>
+    //                                     )
+    //                                     )
+    //                                     }
+    //                                 </div>
+    //                             </div >

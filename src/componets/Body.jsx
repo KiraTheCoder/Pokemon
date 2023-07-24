@@ -30,6 +30,7 @@ const Body = () => {
                                 ...prevPokemonList,
                                 res.data,
                             ]);
+                            setLoading(false);
                         })
                         .catch((err) => {
                             console.log(err);
@@ -43,7 +44,6 @@ const Body = () => {
             .catch((err) => {
                 console.log(err);
             });
-        setLoading(false);
     }, [currentPage]);
 
     const gotoPrevPage = () => {
@@ -56,17 +56,14 @@ const Body = () => {
 
     return (
         <>
-            {/* {loading &&
-                < div className="modal fade" id="pokemonModal" tabindex="-1" aria-labelledby="PokemonModalLabel" aria-hidden="true" >
-                    <div className="modal-dialog modal-dialog-centered">
-                        <div className="modal-body">
-                            <h1>Loading</h1>
-                        </div>
-                    </div>
-                </div >
-            } */}
+
 
             <SearchSection pokemonName={pokemonName} setPokemonName={setPokemonName} />
+            {loading &&
+                <div className="d-flex justify-content-center aligs-items-center">
+                    <h1 style={{ fontSize: "3rem" }}>Loading...</h1>
+                </div>
+            }
             <Card pokemonList={pokemonList} pokemonName={pokemonName} setPokemonName={setPokemonName} />;
             <div className="container">
                 <div className="row  text-center">

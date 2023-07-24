@@ -1,6 +1,6 @@
 /* Google fonts */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&family=Oswald:wght@400;600;700&family=PT+Sans:wght@400;700&family=Poppins:wght@400;500;700;900&family=Roboto+Flex:wght@400;500;700;900&family=Roboto:wght@400;700;900&display=swap');
-@import url('https://db.onlinewebfonts.com/c/d2d21cf0ee4c1d969d8a4dccc587ab26?family=Flexo-Medium');
+
 /* 
 font-family: 'Montserrat', sans-serif;
 font-family: 'Oswald', sans-serif;
@@ -271,6 +271,7 @@ font-family: 'Roboto Flex', sans-serif;
 .modalImage {
     width: 13rem;
     height: 13rem;
+    margin-bottom: 1.5rem;
 }
 
 
@@ -279,7 +280,7 @@ font-family: 'Roboto Flex', sans-serif;
     display: grid;
     width: 350px;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 180px repeat(9, 35px) 80px;
+    grid-template-rows: 180px repeat(8, 35px) 1fr;
     gap: 0 0.5rem;
 
 }
@@ -342,16 +343,12 @@ font-family: 'Roboto Flex', sans-serif;
 }
 
 .item11 {
+    grid-row: 10/11;
+    grid-column: 1/-1;
     display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: center;
 }
 
-.item12 {
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: center;
-    margin: 0 0 0 -4.5rem;
+.item11 p {
+    padding: 0 0.1rem;
+
 }

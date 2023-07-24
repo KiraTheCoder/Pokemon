@@ -3,6 +3,27 @@ body {
     margin-top: 4.5rem;
 }
 
+h1 {
+    font-size: 2rem;
+    font-family: 'Roboto Flex', sans-serif;
+}
+
+h2 {
+    font-size: 1.6rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+h3 {
+    font-size: 1.3rem;
+    font-family: 'Roboto Flex', sans-serif;
+    padding: 0 0.5rem;
+}
+
+p {
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.8rem;
+}
+
 /* Aos custom rotate */
 [data-aos="rotate"] {
     transform: rotate(10800deg);

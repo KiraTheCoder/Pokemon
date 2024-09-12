@@ -1,8 +1,6 @@
-import React from 'react'
-
 const Footer = () => {
     return (
-        <div className="container  text-center">
+        <div className="container footer-container text-center">
             <div className="row">
                 <div className="col-12">
                     <div className="SoialMediaIconConatiner  ">
@@ -13,7 +11,7 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className="col-12 mt-3 mt-md-0">
-                    <p className='copywriteText '>The Pokémon Company &#169; 2023 | All Rights Reserved</p>
+                    <p className='copywriteText '>The Pokémon Company &#169; {(new Date).getFullYear()}  | All Rights Reserved</p>
                 </div>
             </div>
 

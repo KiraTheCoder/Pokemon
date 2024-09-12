@@ -6,74 +6,66 @@ import Card from "./Card";
 const Body = () => {
     const [loading, setLoading] = useState(false);
     const [pokemonList, setPokemonList] = useState([]);
-    const [currentPage, setCurrentPage] = useState(
+    const [currentPageUrl, setCurrentPageUrl] = useState(
         "https://pokeapi.co/api/v2/pokemon/?limit=21"
     );
     const [prevPage, setPrevPage] = useState();
     const [nextPage, setNextPage] = useState();
-    const [pokemonName, setPokemonName] = useState(null);
-
-
-
+    const [pokemonName, setPokemonName] = useState("");
 
     useEffect(() => {
-        setLoading(true);
-        axios
-            .get(currentPage)
-            .then((res) => {
-                res.data.results.map((obj) => {
-                    setPokemonList([]);
-                    axios
-                        .get(obj.url)
-                        .then((res) => {
-                            setPokemonList((prevPokemonList) => [
-                                ...prevPokemonList,
-                                res.data,
-                            ]);
-                            setLoading(false);
-                        })
-                        .catch((err) => {
-                            console.log(err);
-                        });
-                });
+        const fetchPokemons = async () => {
+            try {
+                setLoading(true);
+                const res = await axios.get(currentPageUrl);
 
-                // console.log(pokemonList);
+                // Reset the list before setting the new Pokémon data
+                setPokemonList([]);
+
+                const pokemonDetails = await Promise.all(
+                    res.data.results.map((obj) => axios.get(obj.url))
+                );
+
+                setPokemonList(pokemonDetails.map((detail) => detail.data));
                 setPrevPage(res.data.previous);
                 setNextPage(res.data.next);
-            })
-            .catch((err) => {
-                console.log(err);
-            });
-    }, [currentPage]);
+            } catch (error) {
+                console.log(error);
+            } finally {
+                setLoading(false);
+            }
+        };
 
-    const gotoPrevPage = () => {
-        setCurrentPage(prevPage);
-    };
+        fetchPokemons();
+    }, [currentPageUrl]);
 
-    const gotoNextPage = () => {
-        setCurrentPage(nextPage);
-    };
+    const gotoPrevPage = () => prevPage && setCurrentPageUrl(prevPage);
+    const gotoNextPage = () => nextPage && setCurrentPageUrl(nextPage);
 
     return (
         <>
 
-
+      
             <SearchSection pokemonName={pokemonName} setPokemonName={setPokemonName} />
-            {loading &&
-                <div className="d-flex justify-content-center aligs-items-center">
+            {loading && (
+                <div className="d-flex justify-content-center align-items-center">
                     <h1 style={{ fontSize: "3rem" }}>Loading...</h1>
                 </div>
-            }
-            <Card pokemonList={pokemonList} pokemonName={pokemonName} setPokemonName={setPokemonName} />;
+            )}
+            <Card
+                pokemonList={pokemonList}
+                pokemonName={pokemonName}
+                setPokemonName={setPokemonName}
+            />
             <div className="container">
-                <div className="row  text-center">
+                <div className="row text-center">
                     <div className="col-6">
                         {prevPage && (
                             <button
                                 className="btn btn-primary rounded-lg"
                                 onClick={gotoPrevPage}
                             >
-                                previous
+                                Previous
                             </button>
                         )}
                     </div>
@@ -83,7 +75,7 @@ const Body = () => {
                                 className="btn btn-primary rounded-lg"
                                 onClick={gotoNextPage}
                             >
-                                next {" >"}
+                                Next {" >"}
                             </button>
                         )}
                     </div>
